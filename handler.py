@@ -39,8 +39,8 @@ def image_to_thumbnail(image):
 
 
 def new_filename(key):
-    key_split = key.rsplit('.', 1)
-    return key_split[0] + "_thumbnail.png"
+    filename = os.path.splitext(key)[0]
+    return filename + "_thumbnail.png"
 
 
 def upload_to_s3(bucket, key, image):
@@ -59,6 +59,6 @@ def upload_to_s3(bucket, key, image):
         Key=key
     )
     print(response)
-
+    print(s3.meta.endpoint_url)
     url = '{}/{}/{}'.format(s3.meta.endpoint_url, bucket, key)
     return url
