@@ -21,7 +21,7 @@ provider:
   name: aws
   runtime: python2.7
   region: us-east-1
-  profile: serverless-admin
+  profile: mysticUser
   timeout: 10
   memory: 128
   iamRoleStatements:
